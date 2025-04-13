@@ -48,6 +48,15 @@ group :development, :test do
   gem "rubocop-rails-omakase", require: false
   
   gem 'simplecov', require: false
+
+  gem 'rspec-rails'
+
+  gem 'database_cleaner', '~> 2.0', '>= 2.0.2'
+  gem 'database_cleaner-active_record', '~> 2.2'
+
+  gem 'factory_bot_rails', '~> 6.4', '>= 6.4.4'
+
+  gem 'faker'
 end
 
 gem "dotenv-rails", "~> 3.1"
@@ -55,8 +64,3 @@ gem "dotenv-rails", "~> 3.1"
 gem "redis", "~> 5.4"
 
 gem 'annotate', '~> 2.6'
-
-gem 'database_cleaner', '~> 2.0', '>= 2.0.2'
-gem 'database_cleaner-active_record', '~> 2.2'
-
-gem 'factory_bot_rails', '~> 6.4', '>= 6.4.4'

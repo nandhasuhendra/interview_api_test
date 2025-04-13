@@ -6,7 +6,7 @@ module Api
       # GET /api/v1/jobs
       def index
         if params[:user_id]
-          @jobs = Rails.cache.fetch("jobs_user_#{params[:user_id]}", 30.minutes) { Job.where(user_id: params[:user_id]) }
+          @jobs = Rails.cache.fetch("jobs_user_#{params[:user_id]}", expires_in: 30.minutes) { Job.where(user_id: params[:user_id]) }
         else
           @jobs = Rails.cache.fetch("jobs_all", expires_in: 30.minutes) { Job.all }
         end
