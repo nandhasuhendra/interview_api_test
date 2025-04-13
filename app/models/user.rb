@@ -20,6 +20,6 @@ class User < ApplicationRecord
   after_commit :refresh_cache
 
   def refresh_cache
-    Rails.cache.delete("user_#{id}")
+    Rails.cache.delete("user_*")
   end
 end
