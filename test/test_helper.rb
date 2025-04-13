@@ -5,8 +5,14 @@ require "rails/test_help"
 require 'simplecov'
 SimpleCov.start "rails"
 
+require 'database_cleaner/active_record'
+
+DatabaseCleaner.strategy = :truncation
+
 module ActiveSupport
   class TestCase
+    include FactoryBot::Syntax::Methods
+
     # Run tests in parallel with specified workers
     parallelize(workers: :number_of_processors)
 
@@ -14,5 +20,13 @@ module ActiveSupport
     fixtures :all
 
     # Add more helper methods to be used by all tests here...
+
+    setup do
+      DatabaseCleaner.start
+    end
+
+    teardown do
+      DatabaseCleaner.clean
+    end
   end
 end

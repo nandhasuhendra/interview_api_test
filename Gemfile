@@ -53,3 +53,10 @@ gem "dotenv-rails", "~> 3.1"
 gem "redis", "~> 5.4"
 
 gem 'simplecov', require: false, group: :test
+
+gem 'annotate', '~> 2.6'
+
+gem 'database_cleaner', '~> 2.0', '>= 2.0.2'
+gem 'database_cleaner-active_record', '~> 2.2'
+
+gem 'factory_bot_rails', '~> 6.4', '>= 6.4.4'
