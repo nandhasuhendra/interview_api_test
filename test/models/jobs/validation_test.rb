@@ -17,7 +17,7 @@
 
 require "test_helper"
 
-class JobTest < ActiveSupport::TestCase
+class JobValidationTest < ActiveSupport::TestCase
   setup do
     @user = create(:user)
   end

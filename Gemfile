@@ -46,13 +46,13 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
+  
+  gem 'simplecov', require: false
 end
 
 gem "dotenv-rails", "~> 3.1"
 
 gem "redis", "~> 5.4"
-
-gem 'simplecov', require: false, group: :test
 
 gem 'annotate', '~> 2.6'
 

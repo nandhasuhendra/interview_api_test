@@ -1,11 +1,11 @@
+require "simplecov"
+SimpleCov.start "rails"
+
 ENV["RAILS_ENV"] ||= "test"
 require_relative "../config/environment"
 require "rails/test_help"
 
-require 'simplecov'
-SimpleCov.start "rails"
-
-require 'database_cleaner/active_record'
+require "database_cleaner/active_record"
 
 DatabaseCleaner.strategy = :truncation
 
