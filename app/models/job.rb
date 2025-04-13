@@ -21,4 +21,11 @@ class Job < ApplicationRecord
   validates :title, presence: true
   validates :description, presence: true
   validates :status, presence: true, inclusion: { in: ['pending', 'in_progress', 'completed'] }
+
+  after_commit :refresh_cache
+
+  def refresh_cache
+    Rails.cache.delete("jobs_user_*")
+    Rails.cache.delete("jobs_all")
+  end
 end
